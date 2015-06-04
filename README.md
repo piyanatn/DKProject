@@ -1,12 +1,7 @@
-Yii 2 Basic Project Template
+DKProject
 ============================
 
-Yii 2 Basic Project Template is a skeleton [Yii 2](http://www.yiiframework.com/) application best for
-rapidly creating small projects.
-
-The template contains the basic features including user login/logout and a contact page.
-It includes all commonly used configurations that would allow you to focus on adding new
-features to your application.
+  โปรเจคระดับเทพที่ต้องการพัฒนาระบบสารสนเทศด้านสาธารณสุข เพื่อให้ คปสอ ได้เข้าถึงข้อมูลสุขภาพของผู้ป่วยที่มารับบริการ
 
 [![Latest Stable Version](https://poser.pugx.org/yiisoft/yii2-app-basic/v/stable.png)](https://packagist.org/packages/yiisoft/yii2-app-basic)
 [![Total Downloads](https://poser.pugx.org/yiisoft/yii2-app-basic/downloads.png)](https://packagist.org/packages/yiisoft/yii2-app-basic)
