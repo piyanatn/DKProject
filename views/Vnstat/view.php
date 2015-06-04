@@ -1,6 +1,7 @@
 <?php
 
 use yii\helpers\Html;
+use yii\helpers\ArrayHelper;
 use kartik\grid\GridView;
 use kartik\detail\DetailView;
 use yii\widgets\ActiveForm;
@@ -23,9 +24,20 @@ $this->params['breadcrumbs'][] = $model->cid;
   <div class="alert alert-success" role="alert">
     <h1>HN <font color="green"><?php echo $model->hn; ?></font> ชื่อ-สกุล <font color="green"><?= Html::encode($this->title) ?></font></h1>
     <h4><b>เลขที่บัตรประชาชน : </b> <?php echo $model->cid  ?> <b>วันที่มารับบริการ : </b> <?php echo $model->Visitdays  ?></h4>
-    <h4><b>น้ำหนัก : </b> <?php echo $model->opdscreen->bw  ?>  <b>สูง : </b> <?php echo $model->opdscreen->height  ?>  <b>BP : </b> <?php echo $model->opdscreen->bps ."/" .$model->opdscreen->bpd ?> <b>อัตราการเต้นของหัวใจ </b> <?php echo $model->opdscreen->pulse ?> <b>อุณหภูมิ </b> <?php echo $model->opdscreen->temperature ?> <b>BMI </b> <?php echo $model->opdscreen->bmi ?></h4>
-    <h4><b>การแพ้ยา : </b> <?php echo $model->patient->drugallergy  ?>
+    
+    
+  
+        
   </div>
+      <div class="alert alert-info" role="alert">
+         <h4><b>น้ำหนัก : </b> <?php echo $model->opdscreen->bw  ?>  <b>สูง : </b> <?php echo $model->opdscreen->height  ?>  <b>BP : </b> <?php echo $model->opdscreen->bps ."/" .$model->opdscreen->bpd ?> <b>อัตราการเต้นของหัวใจ : </b> <?php echo $model->opdscreen->pulse ?> <b>อุณหภูมิ : </b> <?php echo $model->opdscreen->temperature ?> <b>BMI : </b> <?php echo $model->opdscreen->bmi ?></h4>
+      </div>
+      <div class="alert alert-danger" role="alert">
+         <h4><b>การแพ้ยา : </b> <?php echo $model->patient->drugallergy  ?>
+      </div>
+      <div class="alert alert-warning" role="alert">
+           <h4><b>นัดครั้งหน้า : </b> <?php echo $model->oapp['oappdate'];  ?> 
+      </div>
 </div>
   </div>
 <div class="row">
@@ -99,14 +111,23 @@ $gridColumns = [
         'class' => 'kartik\grid\DataColumn',
         'attribute' => 'icode',
         'label' => 'ขื่อยา',
-        'value' => 'sdrugitems.name',
+        'value' => 'sdrugitems.fullname',
+        'hAlign'=>'middle',
+        'vAlign'=>'middle',
+    ],
+    
+    [
+        'class' => 'kartik\grid\DataColumn',
+        'attribute' => 'qty',
+        'value' => 'qty',
         'hAlign'=>'middle',
         'vAlign'=>'middle',
     ],
     [
         'class' => 'kartik\grid\DataColumn',
-        'attribute' => 'qty',
-        'value' => 'qty',
+        'attribute' => 'icode',
+        'label' => 'dosageform',
+        'value' => 'sdrugitems.dosageform',
         'hAlign'=>'middle',
         'vAlign'=>'middle',
     ],
@@ -145,7 +166,22 @@ $gridColumns = [
         'class' => 'kartik\grid\DataColumn',
         'attribute' => 'diagtype',
         'label' => 'diagtype',
+        'value' => 'diagtype',
+        'hAlign'=>'middle',
+        'vAlign'=>'middle',
+    ],
+    [
+        'class' => 'kartik\grid\DataColumn',
+        'attribute' => 'diagtype',
+        'label' => 'diagtype',
         'value' => 'diagtypename.name',
+        'hAlign'=>'middle',
+        'vAlign'=>'middle',
+    ],
+    [
+        'class' => 'kartik\grid\DataColumn',
+        'attribute' => 'icd10',
+        'value' => 'icd10',
         'hAlign'=>'middle',
         'vAlign'=>'middle',
     ],

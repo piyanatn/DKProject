@@ -246,6 +246,10 @@ class Vnstat extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Opitemrece::className(), ['vn' => 'vn']);
     }
+    public function getOapp()
+    {
+        return $this->hasOne(Oapp::className(), ['vn' => 'vn']);
+    }
     /**
      * @inheritdoc
      * @return VnstatQuery the active query used by this AR class.

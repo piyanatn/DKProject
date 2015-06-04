@@ -5,6 +5,7 @@ namespace app\controllers;
 use Yii;
 use app\models\Vnstat;
 use app\models\Labhead;
+use app\models\Oapp;
 use app\models\Laborder;
 use app\models\Patientimage;
 use app\models\PatientimageSearch;
@@ -84,7 +85,8 @@ class VnstatController extends Controller
         
         $picture=  Patientimage::find()->where(['hn'=>'0145279']);
               
-              
+
+ 
        $diag=new ActiveDataProvider([
             'query'=> Ovstdiag::find()->
             where(['vn'=>$id])->
@@ -95,9 +97,11 @@ class VnstatController extends Controller
         ]);
        
        $drug=new ActiveDataProvider([
-            'query'=> Opitemrece::find()->
-            where(['vn'=>$id])->
-            orderBy('vstdate DESC'), 
+            'query'=> Opitemrece::find()
+             ->join('LEFT OUTER JOIN', 's_drugitems',
+                   'opitemrece.icode =s_drugitems.icode')  
+             ->where(['vn'=>$id]),
+//             ->orderBy('vstdate DESC'), 
             'pagination'=>[
                 'pageSize'=>20,
             ],
@@ -123,7 +127,7 @@ class VnstatController extends Controller
             'dataProviderLab' => $lab,
             'dataProviderDiag' => $diag,
             'picture'=>$picture,
-   
+
         ]);
     }
 

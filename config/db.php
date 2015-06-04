@@ -2,8 +2,8 @@
 
 return [
     'class' => 'yii\db\Connection',
-    'dsn' => 'mysql:host=192.168.88.199;dbname=dshos',
-    'username' => 'sa',
-    'password' => '82a2x7tt',
+    'dsn' => 'mysql:host=192.168.1.5;dbname=hos',
+    'username' => 'adminhos',
+    'password' => 'hosxp11266',
     'charset' => 'utf8',
 ];

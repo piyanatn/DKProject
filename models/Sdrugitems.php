@@ -97,4 +97,8 @@ class Sdrugitems extends \yii\db\ActiveRecord
     {
         return new SdrugitemsQuery(get_called_class());
     }
+     public function getfullname()
+        {
+                return $this->name .' '. $this->strength .' ' . $this->units;
+        }
 }
