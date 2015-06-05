@@ -154,6 +154,10 @@ class Opitemrece extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Sdrugitems::className(), ['icode' => 'icode']);
     }        
+    public function getDrugusagetable()
+    {
+        return $this->hasOne(Drugusage::className(), ['drugusage' => 'drugusage']);
+    }  
     /**
      * @inheritdoc
      * @return OpitemreceQuery the active query used by this AR class.

@@ -80,13 +80,16 @@ class VnstatController extends Controller
      * @param string $id
      * @return mixed
      */
+    public function actionGetimage($hn)
+    {
+           $picture = new Patientimage();
+           $myModels = $picture->findOne(['hn'=>$hn]);
+           return $this->renderPartial('./getimage', [
+              'model' => $myModels,
+        ]);
+    }
     public function actionView($id)
     {
-        
-        $picture=  Patientimage::find()->where(['hn'=>'0145279']);
-              
-
- 
        $diag=new ActiveDataProvider([
             'query'=> Ovstdiag::find()->
             where(['vn'=>$id])->
@@ -126,7 +129,6 @@ class VnstatController extends Controller
             'dataProvider' => $drug,
             'dataProviderLab' => $lab,
             'dataProviderDiag' => $diag,
-            'picture'=>$picture,
 
         ]);
     }

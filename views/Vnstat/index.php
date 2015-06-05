@@ -64,20 +64,7 @@ $gridColumns = [
         'hAlign'=>'middle',
         'vAlign'=>'middle',
     ],
-    [
-        'class' => 'kartik\grid\DataColumn',
-        'attribute' => 'pdx',
-        'value' => 'pdx',
-        'hAlign'=>'middle',
-        'vAlign'=>'middle',
-    ],
-    [
-        'class' => 'kartik\grid\DataColumn',
-        'attribute' => 'pdx',
-        'value' => 'icd101.name',
-        'hAlign'=>'middle',
-        'vAlign'=>'middle',
-    ],
+   
 
     [
          'class' => '\kartik\grid\ActionColumn',

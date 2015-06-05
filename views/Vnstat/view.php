@@ -16,19 +16,27 @@ $this->params['breadcrumbs'][] = ['label' => 'ระบบ EMR Online', 'url' =>
 $this->params['breadcrumbs'][] = $model->cid;
 ?>
 
-<div class="row">
+   <div class="row">
+    <div class="col-md-1">   
+    </div>    
+    <div class="col-md-9">
+        <div class="alert alert-success" role="alert">
+            <h1>HN <font color="green"><?php echo $model->hn; ?></font> ชื่อ-สกุล <font color="green"><?= Html::encode($this->title) ?></font></h1>
+            <h4><b>เลขที่บัตรประชาชน : </b> <?php echo $model->cid  ?> <b>วันที่มารับบริการ : </b> <?php echo $model->Visitdays  ?></h4>
+        </div>   
+    </div>  
+    <div class="col-md-2">
+    <?php     
+        echo "<img src='./index.php?r=vnstat/getimage&hn=".$model->hn."' class=\"img-rounded\" align=center height=130 width=150>"; 
+      //  echo "<img src=\"./blank.jpg\" class=\"img-circle\" alt=\"Cinque Terre\" align=center height=130>";
+    ?>
+    </div>
+  </div>     
+  <div class="row">  
     <div class="col-md-1">
 
     </div>
-  <div class="col-md-11">
-  <div class="alert alert-success" role="alert">
-    <h1>HN <font color="green"><?php echo $model->hn; ?></font> ชื่อ-สกุล <font color="green"><?= Html::encode($this->title) ?></font></h1>
-    <h4><b>เลขที่บัตรประชาชน : </b> <?php echo $model->cid  ?> <b>วันที่มารับบริการ : </b> <?php echo $model->Visitdays  ?></h4>
-    
-    
-  
-        
-  </div>
+      <div class="col-md-11">
       <div class="alert alert-info" role="alert">
          <h4><b>น้ำหนัก : </b> <?php echo $model->opdscreen->bw  ?>  <b>สูง : </b> <?php echo $model->opdscreen->height  ?>  <b>BP : </b> <?php echo $model->opdscreen->bps ."/" .$model->opdscreen->bpd ?> <b>อัตราการเต้นของหัวใจ : </b> <?php echo $model->opdscreen->pulse ?> <b>อุณหภูมิ : </b> <?php echo $model->opdscreen->temperature ?> <b>BMI : </b> <?php echo $model->opdscreen->bmi ?></h4>
       </div>
@@ -38,8 +46,9 @@ $this->params['breadcrumbs'][] = $model->cid;
       <div class="alert alert-warning" role="alert">
            <h4><b>นัดครั้งหน้า : </b> <?php echo $model->oapp['oappdate'];  ?> 
       </div>
+    </div>        
 </div>
-  </div>
+ 
 <div class="row">
   <div class="col-md-1"></div>
   <div class="col-md-11">
@@ -123,11 +132,29 @@ $gridColumns = [
         'hAlign'=>'middle',
         'vAlign'=>'middle',
     ],
+
+    
     [
         'class' => 'kartik\grid\DataColumn',
         'attribute' => 'icode',
-        'label' => 'dosageform',
-        'value' => 'sdrugitems.dosageform',
+        'label' => 'วิธีการใช้',
+        'value' => 'drugusagetable.name1',
+        'hAlign'=>'middle',
+        'vAlign'=>'middle',
+    ],
+    [
+        'class' => 'kartik\grid\DataColumn',
+        'attribute' => 'icode',
+        'label' => '',
+        'value' => 'drugusagetable.name2',
+        'hAlign'=>'middle',
+        'vAlign'=>'middle',
+    ],
+    [
+        'class' => 'kartik\grid\DataColumn',
+        'attribute' => 'icode',
+        'label' => '',
+        'value' => 'drugusagetable.name3',
         'hAlign'=>'middle',
         'vAlign'=>'middle',
     ],

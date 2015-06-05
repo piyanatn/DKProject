@@ -19,7 +19,7 @@ INSTALLATION
 
 กำลังทำรอก่อนนะ
 ~~~
-
+php composer.phar create-project --prefer-dist --stability=dev piyanatn/dkproject
 ~~~
 
 เข้าใช้งานโดยเข้า URL
