@@ -250,6 +250,20 @@ class Vnstat extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Oapp::className(), ['vn' => 'vn']);
     }
+    public function getOvsttable()
+    {
+        return $this->hasOne(Ovst::className(), ['vn' => 'vn']);
+    }
+    public function getPttypetable()
+    {
+        return $this->hasOne(Pttype::className(), ['pttype' => 'pttype'])
+         ->viaTable('ovst', ['vn' => 'vn']);
+    }
+    public function getDepartments()
+    {
+        return $this->hasOne(Kskdepartment::className(), ['depcode' => 'cur_dep'])
+         ->viaTable('ovst', ['vn' => 'vn']);
+    }
     /**
      * @inheritdoc
      * @return VnstatQuery the active query used by this AR class.

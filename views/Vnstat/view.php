@@ -39,6 +39,7 @@ $this->params['breadcrumbs'][] = $model->cid;
       <div class="col-md-11">
       <div class="alert alert-info" role="alert">
          <h4><b>น้ำหนัก : </b> <?php echo $model->opdscreen->bw  ?>  <b>สูง : </b> <?php echo $model->opdscreen->height  ?>  <b>BP : </b> <?php echo $model->opdscreen->bps ."/" .$model->opdscreen->bpd ?> <b>อัตราการเต้นของหัวใจ : </b> <?php echo $model->opdscreen->pulse ?> <b>อุณหภูมิ : </b> <?php echo $model->opdscreen->temperature ?> <b>BMI : </b> <?php echo $model->opdscreen->bmi ?></h4>
+         <h4><b>สิทธิ์การรักษา : </b> <?php echo $model->pttypetable->name ?></b> <b>เลขที่สิทธิ์ : </b> <?php echo $model->ovsttable->pttypeno ?></b></h4>
       </div>
       <div class="alert alert-danger" role="alert">
          <h4><b>การแพ้ยา : </b> <?php echo $model->patient->drugallergy  ?>

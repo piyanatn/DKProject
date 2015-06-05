@@ -45,6 +45,13 @@ $gridColumns = [
     ],
     [
         'class' => 'kartik\grid\DataColumn',
+        'attribute' => 'เวลา',
+        'value' => 'ovsttable.vsttime',
+        'hAlign'=>'middle',
+        'vAlign'=>'middle',
+    ],
+    [
+        'class' => 'kartik\grid\DataColumn',
         'attribute' => 'cid',
         'value' => 'cid',
         'hAlign'=>'middle',
@@ -59,13 +66,18 @@ $gridColumns = [
     ],
     [
         'class' => 'kartik\grid\DataColumn',
-        'attribute' => 'hn',
+        'attribute' => 'ชื่อ-สกุล',
         'value' => 'patient.fullname',
         'hAlign'=>'middle',
         'vAlign'=>'middle',
     ],
-   
-
+    [
+        'class' => 'kartik\grid\DataColumn',
+        'attribute' => 'แผนกที่รับบริการปัจจุบัน',
+        'value' => 'departments.department',
+        'hAlign'=>'middle',
+        'vAlign'=>'middle',
+    ],
     [
          'class' => '\kartik\grid\ActionColumn',
         //'deleteOptions' => ['label' => '<i class="glyphicon glyphicon-remove"></i>',
