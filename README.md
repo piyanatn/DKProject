@@ -17,9 +17,12 @@ INSTALLATION
 
 ### Install via Composer
 
-กำลังทำรอก่อนนะ
 ~~~
 php composer.phar create-project --prefer-dist --stability=dev piyanatn/dkproject
+
+ถ้าลง composer แบบติตตั้งให้พิมพ์ว่า
+
+composer create-project --prefer-dist --stability=dev piyanatn/dkproject
 ~~~
 
 เข้าใช้งานโดยเข้า URL
